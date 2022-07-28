@@ -12,7 +12,7 @@ plugins {
 
 group = "com.seok2"
 version = "0.0.1-SNAPSHOT"
-java.sourceCompatibility = JavaVersion.VERSION_11
+java.sourceCompatibility = JavaVersion.VERSION_17
 
 noArg {
     annotation("javax.persistence.Entity") // 2
@@ -32,6 +32,7 @@ repositories {
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.springframework.boot:spring-boot-starter-web")
+    implementation("org.springframework.boot:spring-boot-starter-security")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
@@ -39,20 +40,23 @@ dependencies {
     runtimeOnly("com.h2database:h2")
 
     // test
-//    testImplementation("io.rest-assured:rest-assured:5.1.1") {
-//        exclude(group = "org.slf4j", module = "groovy")
-//    }
-//    testImplementation ("io.rest-assured:kotlin-extensions:5.1.1")
+    testImplementation("org.hamcrest:hamcrest:2.2")
+    testImplementation("io.rest-assured:kotlin-extensions:5.1.1")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 
     //logging
     implementation("io.github.microutils:kotlin-logging-jvm:2.1.23")
 }
 
+tasks.test {
+    useJUnitPlatform()
+}
+
+
 tasks.withType<KotlinCompile> {
     kotlinOptions {
         freeCompilerArgs = listOf("-Xjsr305=strict")
-        jvmTarget = "11"
+        jvmTarget = "17"
     }
 }
 
