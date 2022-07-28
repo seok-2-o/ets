@@ -6,11 +6,24 @@ plugins {
     kotlin("jvm") version "1.6.21"
     kotlin("plugin.spring") version "1.6.21"
     kotlin("plugin.jpa") version "1.6.21"
+    kotlin ("plugin.allopen") version "1.6.21"
+    kotlin ("plugin.noarg") version "1.6.21"
 }
 
 group = "com.seok2"
 version = "0.0.1-SNAPSHOT"
 java.sourceCompatibility = JavaVersion.VERSION_11
+
+noArg {
+    annotation("javax.persistence.Entity") // 2
+}
+
+allOpen {
+    annotation("javax.persistence.Entity") // 3
+    annotation("javax.persistence.MappedSuperclass") // 4
+    annotation("javax.persistence.Embeddable") // 5
+}
+
 
 repositories {
     mavenCentral()
