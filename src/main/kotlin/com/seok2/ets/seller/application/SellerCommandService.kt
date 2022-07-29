@@ -17,6 +17,4 @@ class SellerCommandService(
         val seller = Seller(email, passwordEncoder.encode(password), name)
         return sellerRepository.save(seller)
     }
-
-
 }
