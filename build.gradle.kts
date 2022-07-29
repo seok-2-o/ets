@@ -34,6 +34,7 @@ repositories {
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.springframework.boot:spring-boot-starter-web")
+    implementation("org.springframework.boot:spring-boot-starter-mail")
 
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
@@ -50,6 +51,7 @@ dependencies {
     testImplementation("org.hamcrest:hamcrest:2.2")
     testImplementation("io.rest-assured:kotlin-extensions:5.1.1")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
+    testImplementation("com.icegreen:greenmail-junit5:1.6.0")
 
     //logging
     implementation("io.github.microutils:kotlin-logging-jvm:2.1.23")

@@ -1,3 +1,20 @@
 security:
   secret: gP8M22vgEMnI%2dYjCBcQJUJGaGLbNGw
   expire-time: 1800000 # 30 * 60 * 1000 = 30m
+spring:
+  mail:
+    host: 127.0.0.1
+    port: 3025
+    username: seok2
+    password: welcome
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+    transport:
+      protocol: smtp
+    debug: true
+    default-encoding: UTF-8
+
