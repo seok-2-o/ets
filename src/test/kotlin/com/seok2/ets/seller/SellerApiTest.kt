@@ -14,11 +14,13 @@ import org.hamcrest.CoreMatchers.notNullValue
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.boot.test.web.server.LocalServerPort
+import org.springframework.test.context.TestPropertySource
 
 
 private const val 셀러_비밀번호 = "1q2w3e!!"
 private const val 셀러_이름 = "이재석"
 
+@TestPropertySource(locations = ["/application.yml"])
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class SellerApiTest {
 
