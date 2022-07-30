@@ -17,4 +17,4 @@ spring:
       protocol: smtp
     debug: true
     default-encoding: UTF-8
-
+host:
