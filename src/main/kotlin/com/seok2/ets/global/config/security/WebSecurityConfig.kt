@@ -20,7 +20,7 @@ class WebSecurityConfig(private val jwtFilter: JwtFilter) {
         http.authorizeRequests()
             .antMatchers(
                 "/apis/examples",
-                "/apis/sellers/sign-in", "/apis/sellers"
+                "/apis/sellers/sign-in", "/apis/sellers", "/apis/sellers/approve"
             ).permitAll()
             .anyRequest().authenticated()
             .and()
