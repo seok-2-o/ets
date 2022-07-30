@@ -18,7 +18,7 @@ internal class SellerCommandServiceTest(
 
     @Test
     fun `판매자 가입`(@Autowired events: ApplicationEvents) {
-        service.welcome("seok2@kakao.com", "1234", "이재석")
+        service.welcome("seok4@kakao.com", "1234", "이재석")
 
         var count = events.stream(SellerCreatedEvent::class.java)
             .filter { it.name == "이재석" }

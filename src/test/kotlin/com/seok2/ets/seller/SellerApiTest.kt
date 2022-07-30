@@ -36,7 +36,7 @@ class SellerApiTest : SpringBootTestWithSandboxMail() {
 
     @Test
     fun `정상적으로 로그인 하는 경우`() {
-        val 이메일 = "seok2@kakao.com"
+        val 이메일 = "seok4@kakao.com"
         `회원가입 및 인증`(이메일, 셀러_비밀번호, 셀러_이름)
         `로그인`(이메일, 셀러_비밀번호) Then {
             statusCode(HttpStatus.SC_OK)
