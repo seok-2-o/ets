@@ -4,12 +4,8 @@ import com.icegreen.greenmail.configuration.GreenMailConfiguration
 import com.icegreen.greenmail.junit5.GreenMailExtension
 import com.icegreen.greenmail.util.ServerSetupTest
 import org.junit.jupiter.api.extension.RegisterExtension
-import org.springframework.boot.test.context.SpringBootTest
-import org.springframework.test.context.TestPropertySource
 
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-@TestPropertySource(locations = ["/application.yml"])
-class SpringBootTestWithSandboxMail {
+class AcceptanceTestWithSandboxMail : AcceptanceTest() {
 
     companion object {
         @JvmField

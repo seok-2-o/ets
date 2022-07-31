@@ -58,6 +58,9 @@ dependencies {
 
     //configuration
     annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
+
+    //utils
+    implementation("com.google.guava:guava:r05")
 }
 
 tasks.test {
