@@ -22,13 +22,6 @@ class SellerSignInService(
         return jwtProvider.create(email)
     }
 
-    @Transactional(readOnly = false)
-    fun approve(email: String, token: String) {
-        var seller = sellerRepository.findByEmail(email)
-            ?: throw UsernameNotFoundException("존재하지 않는 이메일입니다. : $email")
-        seller.approve(token)
-        sellerRepository.save(seller)
-    }
 
     private fun authenticate(email: String, password: String) {
         val seller = sellerRepository.findByEmail(email)
