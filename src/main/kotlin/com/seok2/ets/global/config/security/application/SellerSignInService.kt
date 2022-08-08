@@ -24,12 +24,9 @@ class SellerSignInService(
 
 
     private fun authenticate(email: String, password: String) {
-        val seller = sellerRepository.findByEmail(email)
+        sellerRepository.findByEmail(email)
             ?.takeIf { passwordEncoder.matches(password, it.password) }
             ?: throw SignInFailedException()
-        if (!seller.isActive()) {
-            throw AuthenticationRequiredException()
-        }
     }
 }
 

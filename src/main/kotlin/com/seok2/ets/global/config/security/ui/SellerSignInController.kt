@@ -16,11 +16,4 @@ class SellerSignInController(private val sellerSignInService: SellerSignInServic
             .header("Authorization", "Bearer $token")
             .build()
     }
-
-    @GetMapping("apis/sellers/approve")
-    fun approve(@RequestParam email: String, @RequestParam token: String): ResponseEntity<Void> {
-        sellerSignInService.approve(email, token)
-        return ResponseEntity
-            .noContent().build()
-    }
 }
