@@ -11,12 +11,8 @@ class SellerEventListener(
     private val sender: MailSender
 ) {
 
-    @Value("\${host}")
-    lateinit var host: String
-
     @EventListener
     fun handler(event: SellerCreatedEvent) {
-        val link = "$host/apis/sellers/approve?email=${event.email}&token=${event.token}"
-        sender.send(event.email, "[에츠] 회원 인증 메일입니다.", link)
+        sender.send(event.email, "[에츠] 가족이 되신 것을 환영합니다.", "")
     }
 }
